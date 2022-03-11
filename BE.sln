@@ -25,6 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise3", "Exercise3", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciN", "FibonacciN\FibonacciN.csproj", "{CC860B24-0946-4FE2-94C4-D6CFB375E8B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise2", "Exercise2", "{A9374D97-AB53-4CE0-B368-4EEFB51632D6}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Ajeet Singh Thakur\OneDrive\Desktop\SolutionDesign.docx = C:\Users\Ajeet Singh Thakur\OneDrive\Desktop\SolutionDesign.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
