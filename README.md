@@ -5,7 +5,7 @@ How to run the project locally.
     "ConnectionStrings": {
         "Default": "server=(localdb)\\MSSQLLocalDB;database=BE;Trusted_Connection=True;MultipleActiveResultSets=true"
     }
-2. Execute the DB scripts provided in assignment.
+2. Execute the DB scripts provided in assignment to create the DB tables inside database BE.
    
    <img width="408" alt="image" src="https://user-images.githubusercontent.com/9354355/157807455-825937a3-442b-4d2b-aef0-ae23c75a0c23.png">
 
