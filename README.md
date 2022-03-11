@@ -17,10 +17,15 @@ How to run the project locally.
    
    <img width="666" alt="image" src="https://user-images.githubusercontent.com/9354355/157807748-5802a1d8-aa2e-41ef-936e-20719b225500.png">
    
-   <img width="929" alt="image" src="https://user-images.githubusercontent.com/9354355/157807859-d6bb6349-9309-4465-b832-7cba5323a764.png">
+   <img width="932" alt="image" src="https://user-images.githubusercontent.com/9354355/157808641-349779ab-d588-4ed0-be3c-adcff75eb7b1.png">
 
 5. Run application 
     
-    <img width="784" alt="image" src="https://user-images.githubusercontent.com/9354355/157807588-021b2964-7b77-4070-9065-1b3aed9da646.png">
+    <img width="758" alt="image" src="https://user-images.githubusercontent.com/9354355/157808553-d1dc8f90-893c-4237-8906-5a3845de61de.png">
+
+6. Add new record and save it to DB screen.
+   
+   <img width="701" alt="image" src="https://user-images.githubusercontent.com/9354355/157808462-d3f53145-5912-4b89-aa7a-bf7bd0011ac5.png">
+
 
 
