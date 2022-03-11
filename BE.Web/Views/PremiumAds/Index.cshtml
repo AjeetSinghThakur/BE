@@ -1,0 +1,40 @@
+﻿@model BE.Web.Models.View.PremiumAdListModel
+
+<div class="row mt-5 mb-3">
+    <form asp-action="AddNew" method="post">
+        <button type="submit" class="filterButton">Add New</button>
+    </form>
+</div>
+
+<div class="row">
+    @if (Model.PremiumAds.Count() == 0)
+    {
+        <text>No events were found.</text>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">AdId</th>
+                    <th scope="col">Location Name</th>
+                    <th scope="col">Subcategory Name</th>
+                    <th scope="col">Premium Start</th>
+                    <th scope="col">Premium End</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var premiumAd in Model.PremiumAds)
+                {
+                    <tr>
+                        <th scope="row">@premiumAd.Id</th>
+                        <td>@premiumAd.Location.Name</td>
+                        <td>@premiumAd.SubCategory.Name</td>
+                        <td>@premiumAd?.PremiumStart.ToString(string.Format("dd/MM/yyyy"))</td>
+                        <td>@premiumAd?.PremiumEnd.ToString(string.Format("dd/MM/yyyy"))   </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,30 @@
+﻿@model BE.Web.Models.View.AddNewModel
+
+@{
+    var categoryListItems = Model.Locations.Select(c =>
+        new SelectListItem { Value = c.Id.ToString(), Text = c.Name }
+    ).ToList();
+    categoryListItems.Insert(0, new SelectListItem { Text = "All" });
+
+    var subCategories = Model.SubCategories.Select(c =>
+        new SelectListItem { Value = c.Id.ToString(), Text = c.Name }
+    ).ToList();
+    subCategories.Insert(0, new SelectListItem { Text = "All" });
+}
+<div class="row mt-5 mb-3">
+    @using (Html.BeginForm("AddNewPremium", "PremiumAds", FormMethod.Post))
+    {
+
+        @Html.DropDownListFor(m => m.SelectedLocationId,
+          categoryListItems)
+
+        @Html.DropDownListFor(m => m.SelectedSubcategoryId,
+          subCategories)
+
+        @Html.TextBoxFor(m => m.PremiumStart, "{0:dd/M/yyyy}", new { Style = "height:40px;margin-right: 10px;" })
+
+        @Html.TextBoxFor(m => m.PremiumEnd, "{0:dd/M/yyyy}", new { Style = "height:40px;" })
+
+        <button type="submit" class="filterButton">Save</button>
+    }
+</div>
