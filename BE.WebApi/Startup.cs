@@ -49,16 +49,6 @@ namespace BE.WebApi
                 options.Filters.Add<HandleCommonExceptionFilter>();
             });
            
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder => builder
-                        .WithOrigins(Configuration.GetValue<string>("CORSAllowedOrigins"))
-                        .AllowAnyHeader()
-                        .WithExposedHeaders("X-TotalCount")
-                        .AllowAnyMethod());
-            });
-
             services.AddTransient<IAdPremiumService, AdPremiumService>();
             services.AddTransient<ILocationService, LocationService>();
             services.AddTransient<ISubcategoryTypeService, SubCategoryTypeService>();
@@ -95,7 +85,7 @@ namespace BE.WebApi
 
         /// <summary>
         /// Ajeet: Migrate any database changes on startup (includes initial db creation)
-        /// Not reqired in case when we have seperate db scripts that we are executing in backend.
+        /// Not reqired in case whenwe have seperate db scripts that we are executing in backend.
         /// </summary>
         /// <param name="connectionString"></param>
         private static void MigrateDatabase(string connectionString)
