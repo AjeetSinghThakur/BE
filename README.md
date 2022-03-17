@@ -27,5 +27,8 @@ How to run the project locally.
    
    <img width="701" alt="image" src="https://user-images.githubusercontent.com/9354355/157808462-d3f53145-5912-4b89-aa7a-bf7bd0011ac5.png">
 
+7. To run project related to Fibonacci, please set the console project as startUp
+ 
+   <img width="134" alt="image" src="https://user-images.githubusercontent.com/9354355/157832090-8c525b23-0ff9-413f-b93c-3add3b0c189a.png">
 
 
