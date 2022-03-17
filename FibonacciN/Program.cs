@@ -8,9 +8,9 @@ namespace FibonacciN
         {
             Console.WriteLine("Enter Limit:");
             string input = Console.ReadLine();
-            int n, a = 0, b = 1, c;
+            int a = 0, b = 1, c;
 
-            if(Int32.TryParse(input, out n)){
+            if(Int32.TryParse(input, out int n)){
                 for (int i = 0; i <= n; i++)
                 {
                     if (i % 3 == 0)

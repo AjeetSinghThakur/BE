@@ -9,11 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using BE.WebApi.Filters;
-using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
-using System;
-using BE.WebApi.Extensions;
-using BE.Service.ConfigurationOptions;
 
 namespace BE.WebApi
 {
@@ -30,13 +25,11 @@ namespace BE.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddConfigurations(Configuration);
-
-            var jsonWebTokenOptions = Configuration.GetSection(JsonWebTokenOptions.Section).Get<JsonWebTokenOptions>();
             var connectionString = Configuration.GetConnectionString("Default");
 
-            services.AddDbContext<EntityDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connectionString));
+            services.AddDbContext<EntityDbContext>(options => 
+            options.UseLazyLoadingProxies().UseSqlServer(connectionString));
+
             MigrateDatabase(connectionString);
 
             services.AddSwaggerGen(c =>

@@ -9,7 +9,7 @@ namespace BE.WebApi.Filters
         public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             //before action execution
-            var dbContext = (EntityDbContext)context.HttpContext.RequestServices.GetService(typeof(EntityDbContext));
+            var dbContext = context.HttpContext.RequestServices.GetService(typeof(EntityDbContext)) as EntityDbContext;
             await dbContext.BeginTransaction();
 
             var resultContext = await next();
