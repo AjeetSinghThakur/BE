@@ -6,10 +6,13 @@ namespace BE.WebApi.Filters
 {
     public class TransactionFilter : ActionFilterAttribute, IAsyncActionFilter
     {
-        public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        public override async Task OnActionExecutionAsync(ActionExecutingContext context, 
+            ActionExecutionDelegate next)
         {
             //before action execution
-            var dbContext = context.HttpContext.RequestServices.GetService(typeof(EntityDbContext)) as EntityDbContext;
+            var dbContext = context.HttpContext.RequestServices
+                .GetService(typeof(EntityDbContext)) as EntityDbContext;
+
             await dbContext.BeginTransaction();
 
             var resultContext = await next();

@@ -61,8 +61,10 @@ namespace BE.WebApi.Filters
                 string stack = null;
 #endif
 
-                apiError = new ApiError(msg);
-                apiError.Detail = stack;
+                apiError = new ApiError(msg)
+                {
+                    Detail = stack
+                };
 
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
@@ -76,7 +78,7 @@ namespace BE.WebApi.Filters
     {
         public string Message { get; set; }
         public string Detail { get; set; }
-        public List<string> errors { get; set; }
+        public List<string> Errors { get; set; }
 
         public ApiError(string message)
         {

@@ -87,10 +87,8 @@ namespace BE.WebApi
 
             optionsBuilder.UseSqlServer(connectionString);
 
-            using (var entityDbContext = new EntityDbContext(optionsBuilder.Options))
-            {
-                entityDbContext.Database.Migrate();
-            }
+            using var entityDbContext = new EntityDbContext(optionsBuilder.Options);
+            entityDbContext.Database.Migrate();
         }
     }
 }
