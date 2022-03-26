@@ -23,7 +23,8 @@ namespace BE.WebApi.Controllers
         [HttpPost]
         [TransactionFilter()]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<AdPremiumDto>>> CreateAdPremium([FromBody] AdPremiumDto adPremiumDto)
+        public async Task<ActionResult<IEnumerable<AdPremiumDto>>> CreateAdPremium
+            ([FromBody] AdPremiumDto adPremiumDto)
         {
             var result = await _adPremiumService.CreateAdPremium(adPremiumDto);
             return Ok(result);
