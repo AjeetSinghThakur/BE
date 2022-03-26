@@ -14,10 +14,10 @@ namespace BE.Dal
 
         public EntityDbContext() : base()
         {
-            //used to read connection string when migration should be added or database updated
-            var builder = new ConfigurationBuilder();
-            builder.AddJsonFile("appsettings.json");
-            var configuration = builder.Build();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             _connectionString = configuration.GetConnectionString("Default");
         }
 
@@ -48,21 +48,18 @@ namespace BE.Dal
         public async Task BeginTransaction()
         {
             if (_transaction != null)
-            {
                 return;
-            }
-
+            
             _transaction = await Database.BeginTransactionAsync();
         }
 
         public async Task Commit()
         {
             if (_transaction == null)
-            {
                 return;
-            }
-
+            
             await SaveChangesAsync();
+
             await _transaction.CommitAsync();
             await _transaction.DisposeAsync();
         }
@@ -70,10 +67,8 @@ namespace BE.Dal
         public async Task Rollback()
         {
             if (_transaction == null)
-            {
                 return;
-            }
-
+            
             await _transaction.RollbackAsync();
             await _transaction.DisposeAsync();
         }
