@@ -4,7 +4,7 @@ namespace FibonacciN
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Enter Limit:");
             string input = Console.ReadLine();
